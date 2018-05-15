@@ -1,0 +1,355 @@
+[
+  {
+    "BIRTHDAY": "Medieval era (exact birth date unknown)",
+    "FULL NAME": "Helga Hufflepuff",
+    "HOBBIES": "Cookery",
+    "HOUSE": "Founded Hufflepuff house",
+    "IMAGE": "https://images.pottermore.com/bxd3o8b291gf/5T4WUAKKfmWyCu8YaGcaW0/9af85b99dce3d0e442eec06a017b6517/PM_HelgaHufflepuff_Founders.jpg?w=320&h=320&fit=thumb&f=center&q=85",
+    "NAME": "Helga Hufflepuff",
+    "SKILLS": "Food-related Charms. Many traditional Hogwarts recipes originated with her"
+  },
+  {
+    "BIRTHDAY": "c.1980",
+    "FULL NAME": "Justin Finch-Fletchley",
+    "HOUSE": "Hufflepuff",
+    "IMAGE": "https://images.pottermore.com/bxd3o8b291gf/5AXc4ygT7O6gKciE6QaSS8/68e08d31990cdabaf54f35ab5b636459/Justin.jpg?w=320&h=320&fit=thumb&f=center&q=85",
+    "NAME": "Justin Finch-Fletchley",
+    "PARENTS": "Both Muggles"
+  },
+  {
+    "BIRTHDAY": "15 May",
+    "HOUSE": "Hufflepuff",
+    "IMAGE": "https://images.pottermore.com/bxd3o8b291gf/6XPsCMy3sIqUcE8kgGEa80/bacb0ef3c39f257298ea1cf3d616cc77/PomonaSprout_WB_F1_PomonaSproutCharacterIllustration_Illust_080615_Port.jpg?w=320&h=320&fit=thumb&f=top&q=85",
+    "NAME": "Pomona Sprout",
+    "SKILLS": "Herbology"
+  },
+  {
+    "BIRTHDAY": "c.1980",
+    "FULL NAME": "Ernest Macmillan",
+    "HOUSE": "Hufflepuff",
+    "IMAGE": "https://images.pottermore.com/bxd3o8b291gf/302V2LITgAC4q8OEGCQeWe/5c1d1f41af70e713387e33ad7be44ae0/Ernie.jpg?w=320&h=320&fit=thumb&f=center&q=85",
+    "NAME": "Ernie Macmillan",
+    "PARENTS": "Pure-blood, going back nine generations (according to Ernie)",
+    "PATRONUS": "Boar",
+    "SKILLS": "Revising, being a Prefect, getting the wrong end of the stick"
+  },
+  {
+    "BIRTHDAY": "1897",
+    "FULL NAME": "Newton Artemis Fido Scamander",
+    "HOUSE": "Hufflepuff",
+    "IMAGE": "https://images.pottermore.com/bxd3o8b291gf/6yzttw858WeaKKU2KSaKke/c0c998f237cd7e5a1ae9144db03172c0/FB-TRL2-1_NH.jpg?w=320&h=320&fit=thumb&f=center&q=85",
+    "NAME": "Newt Scamander",
+    "SKILLS": "Magizoology, Order of Merlin, Second Class"
+  },
+  {
+    "BIRTHDAY": "1977",
+    "DEATH": "24 June, 1995",
+    "FULL NAME": "Cedric Diggory",
+    "HOUSE": "Hufflepuff",
+    "IMAGE": "https://images.pottermore.com/bxd3o8b291gf/1uZurZSTWwcC6Ww8UcQ8ws/e3ce3b91e3aa2a86ce8aaed542d62f98/CedricDiggory_WB_F4_CedricDiggoryWithHandsInPockets_Promo_080615_Port.jpg?w=320&h=320&fit=thumb&f=top&q=85",
+    "NAME": "Cedric Diggory",
+    "PARENTS": "Amos Diggory - Father",
+    "SKILLS": "Skilled Seeker",
+    "WAND": "Twelve and a quarter inches, ash, unicorn hair"
+  },
+  {
+    "DEATH": "Executed",
+    "FULL NAME": "The Fat Friar",
+    "HOBBIES": "Pulling rabbits from the Communion cup",
+    "HOUSE": "Hufflepuff",
+    "IMAGE": "https://images.pottermore.com/bxd3o8b291gf/60E6nG3HVeqWwAKQg2k6SY/8b95c7a404ae04a20f5dca24778b0dcb/Pottermore-1-Fat_Friar-4-AWork.jpg?w=320&h=320&fit=thumb&f=center&q=85",
+    "NAME": "Fat Friar",
+    "SKILLS": "Curing peasants of the pox"
+  },
+  {
+    "BIRTHDAY": "c.1980",
+    "FULL NAME": "Zacharias Smith",
+    "HOBBIES": "Playing Quidditch as a Chaser for the Hufflepuff team",
+    "HOUSE": "Hufflepuff",
+    "IMAGE": "https://images.pottermore.com/bxd3o8b291gf/wI1hDyOHIWqE6Q2IoGuII/936fe9bb9e1ea8e8c276ee6b8391f619/Zach.jpg?w=320&h=320&fit=thumb&f=center&q=85",
+    "NAME": "Zacharias Smith"
+  },
+  {
+    "BIRTHDAY": "c.1980",
+    "FULL NAME": "Susan Bones",
+    "HOUSE": "Hufflepuff",
+    "IMAGE": "https://images.pottermore.com/bxd3o8b291gf/5cXXBRRJ0A2kceIEmIisQw/67be9ddb1149bb0a1c058c133e927530/Susan.jpg?w=320&h=320&fit=thumb&f=center&q=85",
+    "NAME": "Susan Bones",
+    "SKILLS": "Defensive spells, learned with Dumbledore's Army"
+  },
+  {
+    "BIRTHDAY": "c.1980",
+    "FULL NAME": "Padma Patil",
+    "HOUSE": "Ravenclaw",
+    "IMAGE": "https://images.pottermore.com/bxd3o8b291gf/20nS4gqN9GkGQiICUGGU0W/e2a892d8f519faf30bc4fbf00cc0921c/Padma.jpg?w=320&h=320&fit=thumb&f=center&q=85",
+    "NAME": "Padma Patil"
+  },
+  {
+    "FULL NAME": "Cho Chang",
+    "HOBBIES": "Supports the Tutshill Tornados",
+    "HOUSE": "Ravenclaw",
+    "IMAGE": "https://images.pottermore.com/bxd3o8b291gf/4PbTuJ9S2QoEwycW4gs4Mg/21f94bfe4081438a9bc3c159c2831b5a/ChoChang_WB_F5_ChoChangPointingWand_Promo_080615_Port.jpg?w=320&h=320&fit=thumb&f=top&q=85",
+    "NAME": "Cho Chang",
+    "PATRONUS": "Swan"
+  },
+  {
+    "BIRTHDAY": "c.1980",
+    "HOUSE": "Ravenclaw",
+    "IMAGE": "https://images.pottermore.com/bxd3o8b291gf/HwJE4vR5uuCUogOwW4mSa/adf787cec32fd454e99fe5e2175e857e/Terry.jpg?w=320&h=320&fit=thumb&f=center&q=85",
+    "NAME": "Terry Boot",
+    "SKILLS": "Potions, also knowledgable about Charms"
+  },
+  {
+    "BIRTHDAY": "5 June 1980",
+    "FULL NAME": "Draco Malfoy",
+    "HOUSE": "Slytherin",
+    "IMAGE": "https://images.pottermore.com/bxd3o8b291gf/629uZ5UEhOeWywAOoKg0MO/60e3454259cc950e4d3370500514fd13/PM_Draco_Malfoy_passageways_illustration.jpg?w=320&h=320&fit=thumb&f=center&q=85",
+    "NAME": "Draco Malfoy",
+    "PARENTS": "Lucius Malfoy and Narcissa Malfoy (née Black)",
+    "WAND": "Hawthorn and unicorn hair. Ten inches precisely"
+  },
+  {
+    "BIRTHDAY": "c.1980",
+    "FULL NAME": "Anthony Goldstein",
+    "HOUSE": "Ravenclaw",
+    "IMAGE": "https://images.pottermore.com/bxd3o8b291gf/2EeU5oJJC0YE2AwoMGoiyA/eb0369dbc03df0d4c07c3f7243f3ecc1/Anthony_Goldstein.jpg?w=320&h=320&fit=thumb&f=center&q=85",
+    "NAME": "Anthony Goldstein"
+  },
+  {
+    "BIRTHDAY": "c.1980",
+    "FULL NAME": "Michael Corner",
+    "HOBBIES": "Quidditch, unless his team is losing",
+    "HOUSE": "Ravenclaw",
+    "IMAGE": "https://images.pottermore.com/bxd3o8b291gf/21kckbGxIAyy6auakWUiko/b7bc3d324c50c40dd6eee1c5a79a9ec1/Michael_Corner.jpg?w=320&h=320&fit=thumb&f=center&q=85",
+    "NAME": "Michael Corner",
+    "SKILLS": "Potions"
+  },
+  {
+    "BIRTHDAY": "c. 1979-1980",
+    "DEATH": "2 May 1998",
+    "HOBBIES": "Beater for the Slytherin Quidditch team",
+    "HOUSE": "Slytherin",
+    "IMAGE": "https://images.pottermore.com/bxd3o8b291gf/1bOqkK39A6iI8Ko8yI228Q/1f231b6b7e44026ea0ecbad69b1b1e4f/VincentCrabbe_WB_F5_CrabbeGoyleMalfoyInquisitorialSquad_Still_080615_Land.jpg?w=320&h=320&fit=thumb&f=center&q=85",
+    "NAME": "Vincent Crabbe",
+    "PARENTS": "Crabbe Sr, a Death Eater"
+  },
+  {
+    "BIRTHDAY": "13 February",
+    "HOBBIES": "Defending her father’s publication The Quibbler, looking for her shoes, painting",
+    "HOUSE": "Ravenclaw",
+    "IMAGE": "https://images.pottermore.com/bxd3o8b291gf/7bIzGzsYTYwg4q4oUamIQC/26f2e532b0ea6a6e9c3710af4d24385a/LunaLovegood_WB_F6_LunaLovegoodQuibblerFullLengthPromoShot_Promo_080615_Port.jpg?w=320&h=320&fit=thumb&f=top&q=85",
+    "NAME": "Luna Lovegood",
+    "PARENTS": "Xenophilius and Pandora Lovegood",
+    "PATRONUS": "Hare",
+    "SKILLS": "Spotting Nargles"
+  },
+  {
+    "BIRTHDAY": "26 September",
+    "DEATH": "1992",
+    "HOBBIES": "Travel, pressing wild flowers",
+    "HOUSE": "Ravenclaw",
+    "IMAGE": "https://images.pottermore.com/bxd3o8b291gf/3jLtFEbyt2QmMqIaIaoyAO/cf892172b32a48d549efc9d5ec95fcbe/QuirinusQuirrell_WB_F1_QuirinusQuirrellFullbody_Promo_080615_Port.jpg?w=320&h=320&fit=thumb&f=top&q=85",
+    "NAME": "Quirinus Quirrell",
+    "SKILLS": "Learned in the theory of Defensive Magic, less adept in the practise",
+    "WAND": "Alder and unicorn hair, 9 inches long, bendy"
+  },
+  {
+    "HOUSE": "Slytherin",
+    "IMAGE": "https://images.pottermore.com/bxd3o8b291gf/6geMPuokpiysCaycgUIc8S/1af908589b49acc9bc424ee75b364577/Goyle_PM_B4C18M1_DracoCrabbeGoyleHarryRonHermioneHexBigTeeth_Moment.jpg?w=320&h=320&fit=thumb&f=center&q=85",
+    "NAME": "Gregory Goyle",
+    "PARENTS": "Goyle Sr, a Death Eater",
+    "SKILLS": "Beater on the Slytherin Quidditch team"
+  },
+  {
+    "DEATH": "c.1980. Killed by Inferi",
+    "FULL NAME": "Regulus Acturus Black",
+    "HOBBIES": "Quidditch. Was Slytherin's Seeker during his time at Hogwarts",
+    "HOUSE": "Slytherin",
+    "IMAGE": "https://images.pottermore.com/bxd3o8b291gf/3teEXk3yS4mEgW4QYQseiy/34598e132a6a5404e645f4e9f2015be3/RAB.jpg?w=320&h=320&fit=thumb&f=center&q=85",
+    "NAME": "Regulus Black",
+    "PARENTS": "Orion Black (wizard) and Walburga Black (witch)"
+  },
+  {
+    "BIRTHDAY": "c. 1954",
+    "HOUSE": "Slytherin",
+    "IMAGE": "https://images.pottermore.com/bxd3o8b291gf/3ix7bMj0n6YyUMQmqCWKgY/9c24d1af9b1205e2bac60b0b025e12c8/LuciusMalfoy_WB_F2_LuciusMalfoyMidshot_V1_Promo_080615_Port.jpg?w=320&h=320&fit=thumb&f=center&q=85",
+    "NAME": "Lucius Malfoy",
+    "PARENTS": "Abraxas Malfoy (father)",
+    "SKILLS": "Skilled duellist and potioneer",
+    "WAND": "Eighteen inches, elm, dragon heartstring. After the Battle of the Seven Potters he began using an unknown wand."
+  },
+  {
+    "BIRTHDAY": "28 April",
+    "HOBBIES": "The Slug Club, corresponding with famous ex-students, fine wines and confectionery",
+    "HOUSE": "Slytherin",
+    "IMAGE": "https://images.pottermore.com/bxd3o8b291gf/4h4rOAfhba4SgqGWsMOAUa/d4d51c4d0b8b3ec6ed7a2ec528a50346/HoraceSlughorn_WB_F6_HoraceSlughornCharacterIllustration_V2_Illust_080615_Port.jpg?w=320&h=320&fit=thumb&f=top&q=85",
+    "NAME": "Horace Slughorn",
+    "PARENTS": "Wizard father, witch mother (family one of the so-called 'Sacred Twenty-Eight')",
+    "SKILLS": "Accomplished Occlumens, expert Potioneer, advanced self-transfiguration",
+    "WAND": "Cedar and dragon heartstring, ten and a quarter inches, fairly flexible"
+  },
+  {
+    "HOBBIES": "Fondness for unicorns",
+    "HOUSE": "Slytherin",
+    "IMAGE": "https://images.pottermore.com/bxd3o8b291gf/5u01BgTj2wIk8quwQsoeCm/eb218336f7b71d03173f51d2c242a095/HP6-VFX-00031.jpg?w=320&h=320&fit=thumb&f=top&q=85",
+    "NAME": "Pansy Parkinson"
+  },
+  {
+    "FULL NAME": "Blaise Zabini",
+    "HOUSE": "Slytherin",
+    "IMAGE": "https://images.pottermore.com/bxd3o8b291gf/76Bdrwt8RyEkOiAqOaA8sg/97b3ab4560b3911169db3d8b8bc4e1bc/BlaiseZabini_WB_F6_BlaiseZabiniAtSlughornsDinnerParty_Still_080615_Land.jpg?w=320&h=320&fit=thumb&f=center&q=85",
+    "NAME": "Blaise Zabini",
+    "PARENTS": "His mother is a beautiful witch who married seven times, all of her husbands dying in mysterious circumstances and leaving her a fortune"
+  },
+  {
+    "BIRTHDAY": "Medieval era (exact birth date unknown)",
+    "DEATH": "Legend has it that a broken heart contributed to her early death",
+    "FULL NAME": "Rowena Ravenclaw",
+    "HOUSE": "Founded Ravenclaw house",
+    "IMAGE": "https://images.pottermore.com/bxd3o8b291gf/3z6qwVrX7quYOKeYeymc4e/195206cd5468eedc74b65254711077a7/PM_RowenaRavenclaw_Founders.jpg?w=320&h=320&fit=thumb&f=center&q=85",
+    "NAME": "Rowena Ravenclaw",
+    "SKILLS": "Extremely skilled witch, known for her intelligence and wisdom"
+  },
+  {
+    "BIRTHDAY": "1955",
+    "FULL NAME": "Narcissa Malfoy (née Black)",
+    "HOUSE": "Slytherin",
+    "IMAGE": "https://images.pottermore.com/bxd3o8b291gf/2rDCnD5L24ayGWMYuO06c2/221345971a4e1c9ee0d7bf223d4a256c/NarcissaMalfoy_WB_F6_NarcissaAndBellatrixSpinnersEnd_Still_080615_Port.jpg?w=320&h=320&fit=thumb&f=top&q=85",
+    "NAME": "Narcissa Malfoy",
+    "PARENTS": "Cygnus Black III and Druella Black (née Rosier)"
+  },
+  {
+    "BIRTHDAY": "17 October",
+    "HOBBIES": "Decorating the Great Hall for Christmas",
+    "HOUSE": "Ravenclaw",
+    "IMAGE": "https://images.pottermore.com/bxd3o8b291gf/ShsuS7mzmw62IskMKQE0k/ef3f471a769b18a19406ef4d5ebd5e4d/FiliusFlitwick_WB_F1_FlitwickStugglingToCarryBooks_Promo_080615_Port.jpg?w=320&h=320&fit=thumb&f=top&q=85",
+    "NAME": "Filius Flitwick",
+    "PARENTS": "Goblin ancestry",
+    "SKILLS": "Charms"
+  },
+  {
+    "BIRTHDAY": "26 January 1964",
+    "FULL NAME": "Gilderoy Lockhart O.M. (Third Class)",
+    "HOBBIES": "Autographing photographs of himself, relentless self-promotion",
+    "HOUSE": "Ravenclaw",
+    "IMAGE": "https://images.pottermore.com/bxd3o8b291gf/34w0DNyl8IouM8gSO6ko2M/0893445ff98fc9b9fdf15d8e191f7c55/GilderoyLockhart_WB_F2_GilderoyLockhartGrinning_Still_080615_Land.jpg?w=320&h=320&fit=thumb&f=right&q=85",
+    "NAME": "Gilderoy Lockhart",
+    "WAND": "Cherry and dragon heartstring, nine inches, slightly bendy"
+  },
+  {
+    "DEATH": "2 May 1998",
+    "FULL NAME": "Nymphadora Tonks, also know as Tonks and occasionally Dora",
+    "HOUSE": "Hufflepuff",
+    "IMAGE": "https://images.pottermore.com/bxd3o8b291gf/4RCmWhTVFSUk4CQGuYqIIm/99a360b9d5e3907824b0763fc079d972/NymphadoraTonks_WB_F5_NympadoraTonksPromoShot_Promo_100615_Port.jpg?w=320&h=320&fit=thumb&f=top&q=85",
+    "NAME": "Nymphadora Tonks",
+    "PARENTS": "Edward 'Ted' Tonks (Muggle-born wizard) and Andromeda Tonks (née Black, witch sister of Bellatrix Lestrange and Narcissa Malfoy)",
+    "PATRONUS": "A jack rabbit, then, after she fell in love with Remus Lupin, a wolf",
+    "SKILLS": "Talented Auror, Metamorphmagus"
+  },
+  {
+    "DEATH": "Killed by a Basilisk when the Chamber of Secrets was opened for the first time",
+    "FULL NAME": "Myrtle Elizabeth Warren",
+    "HOBBIES": "Haunting the girls' bathroom",
+    "HOUSE": "Ravenclaw",
+    "IMAGE": "https://images.pottermore.com/bxd3o8b291gf/1thrI5Y7TSAQ4i8mwAYI8Q/58ac131a5a714fa532fe0c1cc1adccd5/MoaningMyrtle_PM_B2_MyrtleInHerBathroom_Individual.jpg?w=320&h=320&fit=thumb&f=top&q=85",
+    "NAME": "Moaning Myrtle"
+  },
+  {
+    "DEATH": "Killed himself in remorse for stabbing Helena Ravenclaw. He wears his chains as an act of penitence.",
+    "FULL NAME": "The Bloody Baron",
+    "HOBBIES": "Groaning and clanking up on the Astronomy Tower",
+    "HOUSE": "Slytherin",
+    "IMAGE": "https://images.pottermore.com/bxd3o8b291gf/5rc2IcsjQsY8saQ2SAKQew/579742d2bf2d7e42b61a04f427220c38/Pottermore-1-Bloody_Baron-5AW.jpg?w=320&h=320&fit=thumb&f=center&q=85",
+    "NAME": "Bloody Baron",
+    "SKILLS": "Controlling Peeves"
+  },
+  {
+    "BIRTHDAY": "9 January 1960",
+    "DEATH": "2 May 1998",
+    "FULL NAME": "Severus Snape",
+    "HOUSE": "Slytherin",
+    "IMAGE": "https://images.pottermore.com/bxd3o8b291gf/1PmbmTHd6ckGkC2QGag8mI/176f27ae04f2174150b8568f98b59661/Pottermore_CharacterPortraits_Snape_Colour_04JH.jpg?w=320&h=320&fit=thumb&f=center&q=85",
+    "NAME": "Severus Snape",
+    "PARENTS": "Tobias Snape (Muggle) and Eileen Snape (witch, née Prince)",
+    "PATRONUS": "Doe",
+    "SKILLS": "Extremely skilled at potions and Occlumency"
+  },
+  {
+    "BIRTHDAY": "c. 1980",
+    "HOBBIES": "Collecting Chocolate Frog cards",
+    "HOUSE": "Hufflepuff",
+    "IMAGE": "https://images.pottermore.com/bxd3o8b291gf/6QqKDlkkzSkMEgemIiM6AK/0532bf1d656a1a11db4f8872fcb4e749/Hannah.jpg?w=320&h=320&fit=thumb&f=center&q=85",
+    "NAME": "Hannah Abbott",
+    "PARENTS": "Her mother was murdered by Death Eaters in 1996 during the second Wizarding War",
+    "SKILLS": "Defensive spells, learned with Dumbledore's Army"
+  },
+  {
+    "BIRTHDAY": "26 August",
+    "FULL NAME": "Dolores Jane Umbridge",
+    "HOBBIES": "Collecting the 'Frolicsome Feline' ornamental plate range, adding flounces to fabric and frills to stationary objects, inventing instruments of torture",
+    "HOUSE": "Slytherin",
+    "IMAGE": "https://images.pottermore.com/bxd3o8b291gf/1VquuiANZeIagEOUAOOqaI/07c7eba44637c59eb8281e45dfbc868c/DoloresUmbridge_WB_F5_DoloresUmbridgeCharacterIllustration_V4_Illust_080615_Port.tif.jpg?w=320&h=320&fit=thumb&f=top&q=85",
+    "NAME": "Dolores Umbridge",
+    "PARENTS": "Orford Umbridge (wizard), Ellen Cracknell (Muggle)",
+    "PATRONUS": "Cat",
+    "SKILLS": "Her punishment quill is of her own invention",
+    "WAND": "Birch and dragon heartstring, eight inches long"
+  },
+  {
+    "BIRTHDAY": "Medieval era (exact birth date unknown)",
+    "FULL NAME": "Salazar Slytherin",
+    "HOUSE": "Founded Slytherin house",
+    "IMAGE": "https://images.pottermore.com/bxd3o8b291gf/1P8T2QeDDaeaC8A2ssuocG/f39544cba2fba20de8e5826571168a26/PM_SalazarSlytherin_Founders.jpg?w=320&h=320&fit=thumb&f=center&q=85",
+    "NAME": "Salazar Slytherin",
+    "SKILLS": "Accomplished Legilimens and one of the first recorded Parselmouths",
+    "WAND": "Contained a fragment of Basilisk horn"
+  },
+  {
+    "BIRTHDAY": "25 September",
+    "HOBBIES": "None; his profession is his obsession",
+    "HOUSE": "Ravenclaw",
+    "IMAGE": "https://images.pottermore.com/bxd3o8b291gf/33mVCvK9IsekqKyImu0geY/637c4b1ee807a2a8f520fbb5acc39a79/GarrickOllivander_WB_F7_OllivandersExaminesHarrysWand_Still_100615_Port.jpg?w=320&h=320&fit=thumb&f=center&q=85",
+    "NAME": "Garrick Ollivander",
+    "PARENTS": "Wizard father, Muggle-born mother",
+    "SKILLS": "An incomparable understanding of wandcraft",
+    "WAND": "Hornbeam and dragon heartstring, twelve and three-quarter inches, slightly bendy"
+  },
+  {
+    "FULL NAME": "Marietta Edgecombe",
+    "HOUSE": "Ravenclaw",
+    "IMAGE": "https://images.pottermore.com/bxd3o8b291gf/3WfgBPz1uUS6yGECGeKqG6/c7a3923791ae900d73d36df2fa10f4a0/Marietta.jpg?w=320&h=320&fit=thumb&f=center&q=85",
+    "NAME": "Marietta Edgecombe",
+    "PARENTS": "Her mother is Madam Edgecombe from the Floo Network office in the Department of Magical Transportation",
+    "SKILLS": "Covering up the spots that blight her face after betraying Dumbledore's Army"
+  },
+  {
+    "BIRTHDAY": "9 March",
+    "FULL NAME": "Sybill Patricia Trelawney",
+    "HOBBIES": "Practising making doom-laden prophecies in front of the mirror, sherry",
+    "HOUSE": "Ravenclaw",
+    "IMAGE": "https://images.pottermore.com/bxd3o8b291gf/1296BxymyCQA4Ioiu6Cwm6/60ae04bb06f48465be9099b750af5783/SybilTrelawney_WB_F3_HeadshotOfTrelawney_Still_080615_Land.jpg?w=320&h=320&fit=thumb&f=center&q=85",
+    "NAME": "Sybill Trelawney",
+    "PARENTS": "Muggle mother, wizard father",
+    "SKILLS": "A Seer, though the gift is unpredictable and unconscious",
+    "WAND": "9 ½”, hazel, unicorn hair core"
+  },
+  {
+    "DEATH": "Stabbed by the Bloody Baron",
+    "FULL NAME": "Helena Ravenclaw",
+    "HOUSE": "Ravenclaw",
+    "IMAGE": "https://images.pottermore.com/bxd3o8b291gf/3q1sJD7mUMy6mWkqCEQmCC/8024fc0ede56e17e79769657fc96758c/Pottermore-1-the_grey_lady-4AWork.jpg?w=320&h=320&fit=thumb&f=center&q=85",
+    "NAME": "Grey Lady",
+    "PARENTS": "Rowena Ravenclaw (mother)"
+  },
+  {
+    "BIRTHDAY": "1951",
+    "DEATH": "2 May 1998",
+    "HOBBIES": "Obsessed with her master and blood-purity, intensely happy to torture any that cross her",
+    "HOUSE": "Slytherin",
+    "IMAGE": "https://images.pottermore.com/bxd3o8b291gf/3hTdm6oOmAY8qs8YqCmAQq/2f585d9f84a4f5ba5a760cd7b89e908f/BellatrixLestrange_WB_F5_BellatrixLestrangeCharacterIllustration_V1_Illust_080615_Port.jpg?w=320&h=320&fit=thumb&f=top&q=85",
+    "NAME": "Bellatrix Lestrange",
+    "PARENTS": "Cygnus Black III and Druella Black",
+    "SKILLS": "She is a duellist of great skill and an experienced Occlumens",
+    "WAND": "Twelve and three-quarter inches, walnut, dragon heartstring"
+  }
+]

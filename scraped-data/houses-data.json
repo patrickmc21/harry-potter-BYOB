@@ -1,0 +1,42 @@
+[
+  {
+    "Animal": "Lion",
+    "Common room": "Gryffindor Tower",
+    "Founder": "Godric Gryffindor",
+    "Ghost": "Nearly Headless Nick",
+    "Head": "Minerva McGonagall (? - 1998)",
+    "House colours": "Scarlet and gold",
+    "Traits": "Brave",
+    "name": "Gryffindor"
+  },
+  {
+    "Animal": "Badger",
+    "Common room": "Hufflepuff Basement",
+    "Founder": "Helga Hufflepuff",
+    "Ghost": "Fat Friar",
+    "Head": "Pomona Sprout (? - before 2017)",
+    "House colours": "Yellow and black",
+    "Traits": "Loyal",
+    "name": "Hufflepuff"
+  },
+  {
+    "Animal": "Eagle",
+    "Common room": "Ravenclaw Tower",
+    "Founder": "Rowena Ravenclaw",
+    "Ghost": "Grey Lady",
+    "Head": "Filius Flitwick (? - ?)",
+    "House colours": "Blue and bronze",
+    "Traits": "Wise",
+    "name": "Ravenclaw"
+  },
+  {
+    "Animal": "Snake",
+    "Common room": "Slytherin Dungeon",
+    "Founder": "Salazar Slytherin",
+    "Ghost": "Bloody Baron",
+    "Head": "Severus Snape (? - 1997)",
+    "House colours": "Green and silver",
+    "Traits": "Cunning",
+    "name": "Slytherin"
+  }
+]
