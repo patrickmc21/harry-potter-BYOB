@@ -33,7 +33,7 @@ exports.up = function(knex, Promise) {
 
 exports.down = function(knex, Promise) {
   return Promise.all([
-    knex.schema.dropTable('houses'),
-    knex.schema.dropTable('characters')
+    knex.schema.dropTable('characters'),
+    knex.schema.dropTable('houses')
   ]);
 };
