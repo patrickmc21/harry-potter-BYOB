@@ -57,4 +57,3 @@ exports.seed = function(knex, Promise) {
     console.log(err)
   })
 }
-
