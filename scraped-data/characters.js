@@ -2,6 +2,7 @@ const Nightmare = require('nightmare');
 const nightmare = Nightmare({show: true});
 let houseArray = [];
 let charactersArray = [];
+let characterInfoArray = [];
 
 
 getHouseUrls()
@@ -56,30 +57,30 @@ function getCharacterUrls() {
 }
 
 function scrapeCharacters(){
-  const characterInfo = charactersArray.map(link => {
+  const shortArray = charactersArray.slice(0,40)
+  const characterInfo = shortArray.map(link => {
     let nightmare = Nightmare({show: true})
 
     nightmare
       .goto(link)
       .wait(1000)
       .evaluate(() => {
-        const infoBlock = document.querySelector('.l-widget--factfile.factfile.in-view');
+        const keys = [...document.querySelectorAll('dt')];
+        const stats = [...document.querySelectorAll('dd p')];
+        
+        const statObj = stats.reduce((statObj, stat, idx) => {
+          statObj[keys[idx].innerText] = stat.innerText
 
-        // const keys = infoBlock.querySelectorAll('dt');
-        // const stats = infoBlock.querySelectorAll('dd');
-        return document.querySelector('.factfile__fact').innerText;
-        // return stats.reduce((statObj, stat, idx) => {
-        //   statObj[keys[idx].innerText] = stat.innerText
-        //   return statObj
-        // }, {})
+          return statObj
+        }, {})
+        return statObj;
       })
-      .wait(29999)
+      .end()
       .then((characterStats) => {
         console.log(characterStats)
       })
       .catch(error => {
         console.log(error)
-        nightmare.end()
       })
   })
 }
