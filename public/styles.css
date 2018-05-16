@@ -1,0 +1,42 @@
+h1 {
+  font-family: 'Cinzel', serif;
+  font-size: 56px;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: auto;
+  height: 400px;
+  width: 50%;
+}
+
+h2 {
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+  font-size: 36px;
+  text-align: center;
+}
+
+input,
+label,
+input::placeholder {
+  font-family: 'Lato', sans-serif;
+  font-size: 32px;
+}
+
+#submit {
+  border: 1px solid gray;
+  height: 50px;
+  font-family: 'Lato', sans-serif;
+  font-size: 32px;
+}
+
+#submit:hover {
+  border-color: green;
+  color: green;
+}
+
+
