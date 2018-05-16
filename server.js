@@ -76,21 +76,37 @@ app.delete('/api/v1/houses', (request, response) => {
 });
 
 app.get('/api/v1/characters', (request, response) => {
-  db('characters')
-    .select()
-    .then(characters => {
-      response.status(200).json(characters);
-    })
-    .catch(err => {
-      response
-        .status(500)
-        .json({ error: err, message: 'Failed to GET characters' });
-    });
+  const { house } = request.query;
+
+  if (house) {
+    db('characters').where('house', house).select()
+      .then(characters => {
+        if (characters.length > 0) {
+        response.status(200).json(characters)
+        } else {
+          response.status(404).json({message: `No characters found in ${house} house`})
+        }
+      })
+      .catch(error => {
+        response.status(500).json({error: error, message: 'Error retrieving characters'})
+      })
+  } else {
+    db('characters')
+      .select()
+      .then(characters => {
+        response.status(200).json(characters);
+      })
+      .catch(err => {
+        response
+          .status(500)
+          .json({ error: err, message: 'Failed to GET characters' });
+      });
+  }
 });
 
-app.get('/api/v1/characters/:house_id', (request, response) => {
+app.get('/api/v1/characters/:id', (request, response) => {
   db('characters')
-    .where('house_id', request.params.house_id)
+    .where('id', request.params.id)
     .select()
     .then(characters => {
       response.status(200).json(characters);
