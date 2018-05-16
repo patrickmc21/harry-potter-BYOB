@@ -53,6 +53,16 @@ app.post('/api/v1/houses', (request, response) => {
   }
 });
 
+app.put('/api/v1/houses/:id', (request, response) => {
+  db('houses').where('id', request.params.id).update({...request.body})
+    .then(house => {
+      response.status(200).json({message: 'House updated'})
+    })
+    .catch(err => {
+      response.status(500).json({error: error, message: 'Failed to updata data'})
+    })
+});
+
 app.delete('/api/v1/houses', (request, response) => {
   const id = request.body.id;
 
@@ -62,8 +72,35 @@ app.delete('/api/v1/houses', (request, response) => {
   })
   .catch(err => {
     response.status(418).json({message: 'Unable to delete house'})
-  })
-})
+  });
+});
+
+app.get('/api/v1/characters', (request, response) => {
+  db('characters')
+    .select()
+    .then(characters => {
+      response.status(200).json(characters);
+    })
+    .catch(err => {
+      response
+        .status(500)
+        .json({ error: err, message: 'Failed to GET characters' });
+    });
+});
+
+app.get('/api/v1/characters/:house_id', (request, response) => {
+  db('characters')
+    .where('house_id', request.params.house_id)
+    .select()
+    .then(characters => {
+      response.status(200).json(characters);
+    })
+    .catch(err => {
+      response
+        .status(500)
+        .json({ error: err, message: 'Character Not Found, Invalid Id' });
+    });
+});
 
 app.post('/api/v1/characters', (request, response) => {
   const character = request.body;
@@ -93,24 +130,14 @@ app.post('/api/v1/characters', (request, response) => {
   }
 });
 
-app.get('/api/v1/characters', (request, response) => {
-  db('characters').select()
-    .then((characters) => {
-      response.status(200).json(characters)
+app.put('/api/v1/characters/:id', (request, response) => {
+  db('characters').where('id', request.params.id).update({...request.body})
+    .then(character => {
+      response.status(200).json({message: "Character Updated"})
     })
-    .catch(err => {
-      response.status(500).json({error: err, message: 'Failed to GET characters'})
-    });
-});
-
-app.get('/api/v1/characters/:house_id', (request, response) => {
-  db('characters').where('house_id', request.params.house_id).select()
-   .then((characters) => {
-     response.status(200).json(characters)
-   })
-   .catch(err => {
-      response.status(500).json({error: err, message: 'Character Not Found, Invalid Id'})
-   })
+    .catch(error => {
+      response.status(500).json({error: error, message: 'Unable to update character'})
+    })
 });
 
 app.delete('/api/v1/characters', (request, response) => {
