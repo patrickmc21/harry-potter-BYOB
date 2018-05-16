@@ -39,4 +39,13 @@ input::placeholder {
   color: green;
 }
 
+#key-zone {
+  resize: none;
+  display: block;
+  margin: auto;
+  height: 100px;
+  width: 50%;
+  font-size: 16px;
+}
+
 

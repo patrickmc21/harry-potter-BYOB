@@ -51,7 +51,7 @@ app.post('/authenticate', (request, response) => {
     }, process.env.SECRET_KEY, {expiresIn: '24h'})
     response.status(200).json({token: token})
   } else {
-    response.status(404).json({message: 'Invalid'})
+    response.status(404).json({message: 'Invalid authentication, must include valid email and app name'})
   }
 });
 
