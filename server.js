@@ -4,6 +4,8 @@ const bodyParser = require('body-parser');
 const environment = process.env.NODE_ENV || 'development';
 const configuration = require('./knexfile')[environment];
 const db = require('knex')(configuration);
+const jwt = require('jsonwebtoken');
+require('dotenv').config();
 
 app.set('port', process.env.PORT || 3000);
 app.locals.title = 'Potter DB';
@@ -12,7 +14,48 @@ app.use(express.static('public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true}));
 
-app.get('/api/v1/houses', (request, response) => {
+const checkAuth = (request, response, next) => {
+  const token = request.headers.authorization;
+
+  if (!token) {
+    response.status(403).json({message: 'You must be authorized to hit this endpoint'})
+  } else {
+    try {
+      const decoded = jwt.verify(token, process.env.SECRET_KEY);
+
+      next();
+    } catch (error){
+      response.status(403).json({message: 'Invalid token'})
+    }
+  }
+};
+
+const checkAdmin = (request, response, next) => {
+  const token = request.headers.authorization;
+  const decoded = jwt.verify(token, process.env.SECRET_KEY);
+
+  if (decoded.admin) {
+    next()
+  } else {
+    response.status(403).json({message: 'You must have admin privileges to hit this endpoint'})
+  }
+};
+
+app.post('/authenticate', (request, response) => {
+  const { email, appName } = request.body;
+  const admin = email.includes('@turing.io') ? true : false;
+
+  if (email && appName) {
+    const token = jwt.sign({
+      email, appName, admin
+    }, process.env.SECRET_KEY, {expiresIn: '24h'})
+    response.status(200).json({token: token})
+  } else {
+    response.status(404).json({message: 'Invalid'})
+  }
+});
+
+app.get('/api/v1/houses', checkAuth, (request, response) => {
   db('houses').select()
     .then((houses) => {
       response.status(200).json(houses)
@@ -22,17 +65,21 @@ app.get('/api/v1/houses', (request, response) => {
     })
 });
 
-app.get('/api/v1/houses/:id', (request, response) => {
-  db('houses').where('id', request.params.id).select()
-    .then((houses) => {
-      response.status(200).json(houses)
+app.get('/api/v1/houses/:id', checkAuth, (request, response) => {
+  db('houses')
+    .where('id', request.params.id)
+    .select()
+    .then(houses => {
+      response.status(200).json(houses);
     })
     .catch(err => {
-      response.status(404).json({error: err, message:'House Not Found, Invalid Id'})
-    })
-})
+      response
+        .status(404)
+        .json({ error: err, message: 'House Not Found, Invalid Id' });
+    });
+});
 
-app.post('/api/v1/houses', (request, response) => {
+app.post('/api/v1/houses', checkAuth, checkAdmin, (request, response) => {
   const house = request.body;
 
   if (!house.name 
@@ -53,7 +100,7 @@ app.post('/api/v1/houses', (request, response) => {
   }
 });
 
-app.put('/api/v1/houses/:id', (request, response) => {
+app.put('/api/v1/houses/:id', checkAuth, checkAdmin, (request, response) => {
   db('houses').where('id', request.params.id).update({...request.body})
     .then(house => {
       response.status(200).json({message: 'House updated'})
@@ -63,7 +110,7 @@ app.put('/api/v1/houses/:id', (request, response) => {
     })
 });
 
-app.delete('/api/v1/houses', (request, response) => {
+app.delete('/api/v1/houses', checkAuth, checkAdmin, (request, response) => {
   const id = request.body.id;
 
   db('houses').where('id', id).del()
@@ -75,7 +122,7 @@ app.delete('/api/v1/houses', (request, response) => {
   });
 });
 
-app.get('/api/v1/characters', (request, response) => {
+app.get('/api/v1/characters', checkAuth, (request, response) => {
   const { house } = request.query;
 
   if (house) {
@@ -104,7 +151,7 @@ app.get('/api/v1/characters', (request, response) => {
   }
 });
 
-app.get('/api/v1/characters/:id', (request, response) => {
+app.get('/api/v1/characters/:id', checkAuth, (request, response) => {
   db('characters')
     .where('id', request.params.id)
     .select()
@@ -118,7 +165,7 @@ app.get('/api/v1/characters/:id', (request, response) => {
     });
 });
 
-app.post('/api/v1/characters', (request, response) => {
+app.post('/api/v1/characters', checkAuth, checkAdmin, (request, response) => {
   const character = request.body;
   if (!character.name && !character.house_id){
     return response.status(406).json({message: 'Invalid character supplied, valid character must have name and house id'})
@@ -146,7 +193,7 @@ app.post('/api/v1/characters', (request, response) => {
   }
 });
 
-app.put('/api/v1/characters/:id', (request, response) => {
+app.put('/api/v1/characters/:id', checkAuth, checkAdmin, (request, response) => {
   db('characters').where('id', request.params.id).update({...request.body})
     .then(character => {
       response.status(200).json({message: "Character Updated"})
@@ -156,7 +203,7 @@ app.put('/api/v1/characters/:id', (request, response) => {
     })
 });
 
-app.delete('/api/v1/characters', (request, response) => {
+app.delete('/api/v1/characters', checkAuth, checkAdmin, (request, response) => {
   const id = request.body.id;
   db('characters').where('id', id).del()
     .then(characters => {
