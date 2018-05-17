@@ -1,6 +1,8 @@
 language: node_js
 node_js: '9'
 services: postgresql
+env: 
+  - SECRET_KEY='test'
 before_script:
 - psql -c 'create database potterdb_test;' -U postgres
 deploy:
