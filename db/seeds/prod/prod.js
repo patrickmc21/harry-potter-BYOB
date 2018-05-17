@@ -39,3 +39,21 @@ const createHouse = (knex, house) => {
 const createCharacter = (knex, character) => {
   return knex('characters').insert(character)
 }
+
+exports.seed = function(knex, Promise) {
+  return knex('characters').del()
+    .then(function() {
+      knex('houses').del()
+    })
+    .then(function() {
+      let housePromises = [];
+
+      houses.forEach(house => {
+        housePromises.push(createHouse(knex, house))
+      })
+      return Promise.all(housePromises)
+    })
+  .catch(err => {
+    console.log(err)
+  })
+}
