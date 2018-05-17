@@ -2,8 +2,12 @@ language: node_js
 node_js: '9'
 services: postgresql
 before_script:
-  - psql -c 'create database potterdb_test;' -U postgres
+- psql -c 'create database potterdb_test;' -U postgres
 deploy:
   provider: heroku
   api_key:
-    secure: 'Your key here'
+    secure: tQuSBkk+eeVcLK8pOnlF+wU/rKYYYVN/iB6lAZRzIbAl9GisX8zdVVg/iw3/yKM1h1WFl73F1IzDH3lBm+pEkccv+QR8tAiEIVBEuLZ0IzyBNol+LlgCuq61CUZOeJ30gdCls9ORlsxO2aGlaKmjFMjUreLbS6Fb5rjcq2HOrHwrDBk+u3KkVbZL2umJb1fQP+lrg9sd8WAKMbdR2bYO6iu8umQcJYOI+1I4B9I+HmkM5BsVVh42lkM7QcOh6mzERogX+aGDef/evyNyN5eph8wK+vQAyl1dMpv//I71ZLv1Yww4W3lNYl0T9zYPMnWTaUpA2rKnttgORIbQFtYRVxk60+367x9JqZ1jWGJS29ORqP/3Od7rL8JMUtPIvoVUFPhesTbIVKlHY2QPyhh9lOYbDphj6nlTHQKusyyjkdtZrWxcvUZdTAymrKz0plE/axjzzZwJk9iYM2AA41beB1I17Dgq8XK/k+U25qHkGP8nuepZhTYd2Q6vh9qKBn5htq6gH2b1kSjPLHgC+0Y8EH+UPbEMPv3DqsrYsbEsxwN2LQLwB5w9kmwVJWFh6uSRh5u0f/Sf1B/88pdF3QwKEyQ30/jhMd8DoeDPc+LKDAe+r0iyiSxBgM7f5qYkKb3e4ARn0K5zmrRZlJQWpb2/yLlIasrhnIkX7RBMPKNKJQo=
+  app: potter-db
+  skip_cleanup: true
+notifications:
+  email: false
