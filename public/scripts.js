@@ -11,7 +11,7 @@ async function getToken(e) {
 }
 
 async function fetchToken(email, appName) {
-  const url = 'https://potter-db.herokuapp.com/authenticate';
+  const url = '/authenticate';
   const options = {
     method: 'POST',
     body: JSON.stringify({email, appName}),
