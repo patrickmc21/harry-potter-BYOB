@@ -70,12 +70,16 @@ app.get('/api/v1/houses/:id', checkAuth, (request, response) => {
     .where('id', request.params.id)
     .select()
     .then(houses => {
-      response.status(200).json(houses);
+      if (houses.length > 0 ) {
+      response.status(200).json(houses[0]);
+      } else {
+      response.status(404).json({ message: 'House Not Found' });
+      }
     })
     .catch(err => {
       response
         .status(404)
-        .json({ error: err, message: 'House Not Found, Invalid Id' });
+        .json({ error: err, message: 'Invalid Id' });
     });
 });
 
@@ -83,11 +87,11 @@ app.post('/api/v1/houses', checkAuth, checkAdmin, (request, response) => {
   const house = request.body;
 
   if (!house.name 
-    && !house.founder
-    && !house.house_head 
-    && !house.colors 
-    && !house.ghost 
-    && !house.common_room){
+    || !house.founder
+    || !house.house_head 
+    || !house.colors 
+    || !house.ghost 
+    || !house.common_room){
     return response.status(406).json({message: 'Invalid house supplied, valid house must have name, founder, house_head, colors, ghost, and common_room'})
   } else {
     db('houses').insert(house, 'id')
@@ -106,7 +110,7 @@ app.put('/api/v1/houses/:id', checkAuth, checkAdmin, (request, response) => {
       response.status(200).json({message: 'House updated'})
     })
     .catch(err => {
-      response.status(500).json({error: error, message: 'Failed to updata data'})
+      response.status(500).json({error: err, message: 'Failed to update data'})
     })
 });
 
