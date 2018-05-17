@@ -133,7 +133,7 @@ app.get('/api/v1/characters', checkAuth, (request, response) => {
     db('characters').where('house', house).select()
       .then(characters => {
         if (characters.length > 0) {
-        response.status(200).json(characters)
+          response.status(200).json(characters)
         } else {
           response.status(404).json({message: `No characters found in ${house} house`})
         }
@@ -160,18 +160,22 @@ app.get('/api/v1/characters/:id', checkAuth, (request, response) => {
     .where('id', request.params.id)
     .select()
     .then(characters => {
-      response.status(200).json(characters);
+      if (characters.length > 0) {
+      response.status(200).json(characters[0]);
+      } else {
+        response.status(404).json({message: 'Character Not Found'})
+      }
     })
     .catch(err => {
       response
         .status(500)
-        .json({ error: err, message: 'Character Not Found, Invalid Id' });
+        .json({ error: err, message: 'Invalid Id' });
     });
 });
 
 app.post('/api/v1/characters', checkAuth, checkAdmin, (request, response) => {
   const character = request.body;
-  if (!character.name && !character.house_id){
+  if (!character.name || !character.house_id){
     return response.status(406).json({message: 'Invalid character supplied, valid character must have name and house id'})
   } else {
     const newCharacter = {

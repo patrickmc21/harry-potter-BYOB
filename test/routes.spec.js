@@ -7,6 +7,27 @@ require('dotenv').config();
 
 chai.use(chaiHttp);
 
+describe('client routes', () => {
+  it('should return the homepage', (done) => {
+    chai.request(app)
+      .get('/')
+      .end((error, response) => {
+        response.should.have.status(200);
+        response.should.be.html;
+        done();
+      });
+  });
+
+  it('should return 404 for a route that does not exist', (done) => {
+    chai.request(app)
+      .get('/bottle')
+      .end((error, response) => {
+        response.should.status(404);
+        done();
+      });
+  });
+});
+
 describe('Api endpoints', () => {
   let token;
   let email = 'pat@askjeeves.com';
@@ -241,6 +262,286 @@ describe('Api endpoints', () => {
           response.should.have.status(200);
           response.body.should.have.property('message');
           response.body.message.should.equal('House deleted')
+          done();
+        });
+    });
+
+    it('should return an error if unable to delete house', (done) => {
+      chai.request(app)
+        .delete('/api/v1/houses')
+        .set('authorization', token)
+        .send({id: 'none'})
+        .end((error, response) => {
+          response.should.be.json;
+          response.should.have.status(418);
+          response.body.should.have.property('message');
+          response.body.message.should.equal('Unable to delete house');
+          done();
+        })
+    })
+  });
+
+  describe('GET /api/v1/characters', () => {
+    it('should return characters', (done) => {
+      chai.request(app)
+        .get('/api/v1/characters')
+        .set('authorization', token)
+        .end((error, response) => {
+          response.should.be.json;
+          response.should.have.status(200);
+          response.body.should.be.an('array');
+          response.body[0].should.have.property('name');
+          response.body[0].should.have.property('birthday');
+          response.body[0].should.have.property('patronus');
+          response.body[0].should.have.property('parents');
+          response.body[0].should.have.property('skills');
+          response.body[0].should.have.property('hobbies');
+          response.body[0].should.have.property('blood');
+          response.body[0].should.have.property('wand');
+          response.body[0].should.have.property('image');
+          response.body[0].should.have.property('house');
+          response.body[0].should.have.property('house_id');
+          response.body[0].should.have.property('id');         
+          done();
+        });
+    });
+
+    it('should return characters by house if queried', (done) => {
+      chai.request(app)
+        .get('/api/v1/characters?house=Ravenclaw')
+        .set('authorization', token)
+        .end((error, response) => {
+          response.should.be.json;
+          response.should.have.status(200);
+          response.body.should.be.an('array');
+          response.body[0].should.have.property('name');
+          response.body[0].should.have.property('birthday');
+          response.body[0].should.have.property('patronus');
+          response.body[0].should.have.property('parents');
+          response.body[0].should.have.property('skills');
+          response.body[0].should.have.property('hobbies');
+          response.body[0].should.have.property('blood');
+          response.body[0].should.have.property('wand');
+          response.body[0].should.have.property('image');
+          response.body[0].should.have.property('house');
+          response.body[0].should.have.property('house_id');
+          response.body[0].should.have.property('id');
+          done();
+        });
+    });
+
+    it('should return an error if queried not found', (done) => {
+      chai.request(app)
+        .get('/api/v1/characters?house=hello')
+        .set('authorization', token)
+        .end((error,response) => {
+          response.should.be.json;
+          response.should.have.status(404);
+          response.body.should.be.an('object');
+          response.body.should.have.property('message');
+          response.body.message.should.equal('No characters found in hello house');
+          done();
+        });
+    });
+  });
+
+  describe('GET /api/v1/characters/:id', () => {
+    it('should return a specific character', (done) => {
+      chai.request(app)
+        .get('/api/v1/characters/4')
+        .set('authorization', token)
+        .end((error, response) => {
+          response.should.be.json;
+          response.should.have.status(200);
+          response.body.should.be.an('object');
+          response.body.should.have.property('name');
+          response.body.should.have.property('birthday');
+          response.body.should.have.property('patronus');
+          response.body.should.have.property('parents');
+          response.body.should.have.property('skills');
+          response.body.should.have.property('hobbies');
+          response.body.should.have.property('blood');
+          response.body.should.have.property('wand');
+          response.body.should.have.property('image');
+          response.body.should.have.property('house');
+          response.body.should.have.property('house_id');
+          response.body.should.have.property('id');         
+          done();
+        });
+    });
+
+    it('should return error not found if character does not exist', (done) => {
+      chai
+        .request(app)
+        .get('/api/v1/characters/38')
+        .set('authorization', token)
+        .end((error, response) => {
+          response.should.be.json;
+          response.should.have.status(404);
+          response.body.should.have.property('message');
+          response.body.message.should.equal('Character Not Found')
+          done();
+        });
+    })
+
+    it('should return an error if id is invalid', (done) => {
+      chai
+        .request(app)
+        .get('/api/v1/characters/hello')
+        .set('authorization', token)
+        .end((error, response) => {
+          response.should.be.json;
+          response.should.have.status(500);
+          response.body.should.have.property('message');
+          response.body.should.have.property('error');
+          response.body.message.should.equal('Invalid Id');
+          done();
+        });
+    })
+  });
+
+  describe('POST /api/v1/characters', () => {
+    it('should return id if post is successful', done => {
+      chai
+        .request(app)
+        .post('/api/v1/characters')
+        .set('authorization', token)
+        .send({
+          name: 'Pat',
+          birthday: '1/1/1990',
+          patronus: 'Wolf',
+          parents: 'Dad and Mom',
+          skills: 'drinking',
+          hobbies: 'drinking',
+          blood: 'O Neg',
+          wand: 'liger',
+          image: 'pat image',
+          house: 'Gryffindor',
+          house_id: 1
+        })
+        .end((error, response) => {
+          response.should.be.json;
+          response.should.have.status(201);
+          response.body.should.be.an('object');
+          response.body.should.have.property('id');
+          response.body.id.should.equal(38);
+          done();
+        });
+    });
+
+    it('should return error if invalid body supplied', done => {
+      chai
+        .request(app)
+        .post('/api/v1/characters')
+        .set('authorization', token)
+        .send({
+          birthday: '1/1/1990',
+          patronus: 'Wolf',
+          parents: 'Dad and Mom',
+          skills: 'drinking',
+          hobbies: 'drinking',
+          blood: 'O Neg',
+          wand: 'liger',
+          image: 'pat image',
+          house: 'Gryffindor',
+          house_id: 1
+        })
+        .end((error, response) => {
+          response.should.be.json;
+          response.should.have.status(406);
+          response.body.should.be.an('object');
+          response.body.should.have.property('message');
+          response.body.message.should.equal('Invalid character supplied, valid character must have name and house id');
+          done();
+        });
+    });
+  });
+
+  describe('PUT /api/v1/characters/:id', () => {
+    it('should update a character', done => {
+      chai
+        .request(app)
+        .put('/api/v1/characters/1')
+        .set('authorization', token)
+        .send({
+          name: 'Pat',
+          birthday: '1/1/1990',
+          patronus: 'Wolf',
+          parents: 'Dad and Mom',
+          skills: 'drinking',
+          hobbies: 'drinking',
+          blood: 'O Neg',
+          wand: 'liger',
+          image: 'pat image',
+          house: 'Gryffindor',
+          house_id: 1
+        })
+        .end((error, response) => {
+          response.should.be.json;
+          response.should.have.status(200);
+          response.body.should.be.an('object');
+          response.body.should.have.property('message');
+          response.body.message.should.equal('Character Updated');
+          done();
+        });
+    });
+
+    it('should return an error if invalid Id provided when updating character', done => {
+      chai
+        .request(app)
+        .put('/api/v1/characters/hello')
+        .set('authorization', token)
+        .send({
+          name: 'Pat',
+          birthday: '1/1/1990',
+          patronus: 'Wolf',
+          parents: 'Dad and Mom',
+          skills: 'drinking',
+          hobbies: 'drinking',
+          blood: 'O Neg',
+          wand: 'liger',
+          image: 'pat image',
+          house: 'Gryffindor',
+          house_id: 1
+        })
+        .end((error, response) => {
+          response.should.be.json;
+          response.should.have.status(500);
+          response.body.should.be.an('object');
+          response.body.should.have.property('message');
+          response.body.should.have.property('error');
+          response.body.message.should.equal('Unable to update character');
+          done();
+        });
+    });
+  });
+
+  describe('DELETE /api/v1/characters', () => {
+    it('should delete a character', (done) => {
+      chai.request(app)
+        .delete('/api/v1/characters')
+        .set('authorization', token)
+        .send({id: 1})
+        .end((error, response) => {
+          response.should.be.json;
+          response.should.have.status(200);
+          response.body.should.have.property('message');
+          response.body.message.should.equal('Character removed')
+          done();
+        });
+    });
+
+    it('should return an error if unable to delete character', done => {
+      chai
+        .request(app)
+        .delete('/api/v1/characters')
+        .set('authorization', token)
+        .send({ id: 'none' })
+        .end((error, response) => {
+          response.should.be.json;
+          response.should.have.status(404);
+          response.body.should.have.property('message');
+          response.body.message.should.equal('Character not found, unable to delete');
           done();
         });
     });
