@@ -1,11 +1,20 @@
 {
   "extends": ["eslint:recommended"],
+  "parserOptions": {
+    "ecmaVersion": 8,
+    "ecmaFeatures": {
+      "ecmaVersion": 8,
+        "experimentalObjectRestSpread": true,
+      },
+    "sourceType": "module"
+    },
   "env": {
     "browser": true,
     "mocha": true,
     "node": true,
     "es6": true,
-    "jest": true
+    "jest": true,
+    "jquery": true,
   },
   "rules": {
     "eqeqeq": ["error", "always"],
@@ -37,7 +46,11 @@
       "obj",
       "arr"
     ],
-    "max-depth": ["warn", 4]
+    "max-depth": ["warn", 4],
+    "no-unused-vars": [
+      "error",
+      { "varsIgnorePattern": "should" }
+    ]
   },
   "globals": {
     "expect": true

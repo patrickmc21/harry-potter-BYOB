@@ -20,7 +20,9 @@ const checkAuth = (request, response, next) => {
   const token = request.headers.authorization;
 
   if (!token) {
-    response.status(403).json({ message: 'You must be authorized to hit this endpoint' });
+    response.status(403).json({ 
+      message: 'You must be authorized to hit this endpoint' 
+    });
   } else {
     try {
       jwt.verify(token, process.env.SECRET_KEY);
@@ -39,7 +41,9 @@ const checkAdmin = (request, response, next) => {
   if (decoded.admin) {
     next();
   } else {
-    response.status(403).json({ message: 'You must have admin privileges to hit this endpoint' });
+    response.status(403).json({ 
+      message: 'You must have admin privileges to hit this endpoint' 
+    });
   }
 };
 
@@ -54,7 +58,9 @@ app.post('/authenticate', (request, response) => {
     );
     response.status(200).json({ token });
   } else {
-    response.status(404).json({ message: 'Invalid authentication, must include valid email and app name' });
+    response.status(404).json({ 
+      message: 'Invalid authentication, must include valid email and app name' 
+    });
   }
 });
 
@@ -63,8 +69,11 @@ app.get('/api/v1/houses', checkAuth, (request, response) => {
     .then((houses) => {
       response.status(200).json(houses);
     })
-    .catch((err) => {
-      response.status(500).json({ error: err, message: 'Failed to GET houses' });
+    .catch((error) => {
+      response.status(500).json({ 
+        error, 
+        message: 'Failed to GET houses' 
+      });
     });
 });
 
@@ -79,10 +88,10 @@ app.get('/api/v1/houses/:id', checkAuth, (request, response) => {
         response.status(404).json({ message: 'House Not Found' });
       }
     })
-    .catch((err) => {
+    .catch((error) => {
       response
         .status(404)
-        .json({ error: err, message: 'Invalid Id' });
+        .json({ error, message: 'Invalid Id' });
     });
 });
 
@@ -95,12 +104,19 @@ app.post('/api/v1/houses', checkAuth, checkAdmin, (request, response) => {
     !house.colors || 
     !house.ghost || 
     !house.common_room) {
-    return response.status(406).json({ message: 'Invalid house supplied, valid house must have name, founder, house_head, colors, ghost, and common_room' });
+    return response.status(406).json({
+    /* eslint-disable max-len*/ 
+      message: 'Invalid house supplied, valid house must have name, founder, house_head, colors, ghost, and common_room'
+      /* eslint-enable max-len*/ 
+    });
   }
 
   db('houses').insert(house, 'id')
     .then(id => response.status(201).json({ id: id[0] }))
-    .catch(err => response.status(500).json({ error: err, message: 'Failed to POST house. OOPPS!' }));
+    .catch(error => response.status(500).json({ 
+      error, 
+      message: 'Failed to POST house. OOPPS!' 
+    }));
 });
 
 app.put('/api/v1/houses/:id', checkAuth, checkAdmin, (request, response) => {
@@ -108,8 +124,11 @@ app.put('/api/v1/houses/:id', checkAuth, checkAdmin, (request, response) => {
     .then(() => {
       response.status(200).json({ message: 'House updated' });
     })
-    .catch((err) => {
-      response.status(500).json({ error: err, message: 'Failed to update data' });
+    .catch((error) => {
+      response.status(500).json({ 
+        error, 
+        message: 'Failed to update data' 
+      });
     });
 });
 
@@ -134,11 +153,16 @@ app.get('/api/v1/characters', checkAuth, (request, response) => {
         if (characters.length > 0) {
           response.status(200).json(characters);
         } else {
-          response.status(404).json({ message: `No characters found in ${house} house` });
+          response.status(404).json({ 
+            message: `No characters found in ${house} house` 
+          });
         }
       })
       .catch((error) => {
-        response.status(500).json({ error, message: 'Error retrieving characters' });
+        response.status(500).json({ 
+          error, 
+          message: 'Error retrieving characters' 
+        });
       });
   } else {
     db('characters')
@@ -146,10 +170,10 @@ app.get('/api/v1/characters', checkAuth, (request, response) => {
       .then((characters) => {
         response.status(200).json(characters);
       })
-      .catch((err) => {
+      .catch((error) => {
         response
           .status(500)
-          .json({ error: err, message: 'Failed to GET characters' });
+          .json({ error, message: 'Failed to GET characters' });
       });
   }
 });
@@ -165,10 +189,10 @@ app.get('/api/v1/characters/:id', checkAuth, (request, response) => {
         response.status(404).json({ message: 'Character Not Found' });
       }
     })
-    .catch((err) => {
+    .catch((error) => {
       response
         .status(500)
-        .json({ error: err, message: 'Invalid Id' });
+        .json({ error, message: 'Invalid Id' });
     });
 });
 
@@ -176,7 +200,11 @@ app.post('/api/v1/characters', checkAuth, checkAdmin, (request, response) => {
   const character = request.body;
 
   if (!character.name || !character.house_id) {
-    return response.status(406).json({ message: 'Invalid character supplied, valid character must have name and house id' });
+    return response.status(406).json({ 
+      /* eslint-disable max-len*/
+      message: 'Invalid character supplied, valid character must have name and house id'
+      /* eslint-enable max-len*/ 
+    });
   }
 
   const newCharacter = {
@@ -190,25 +218,33 @@ app.post('/api/v1/characters', checkAuth, checkAdmin, (request, response) => {
     wand: character.wand || 'NA',
     image: character.image,
     house: character.house || 'NA',
-    house_id: character.house_id,
+    house_id: character.house_id
   };
 
   db('characters').insert(newCharacter, 'id')
     .then((characterId) => {
       response.status(201).json({ id: characterId[0] });
     })
-    .catch((err) => {
-      response.status(500).json({ error: err, message: 'Failed to POST character. OOPPS!' });
+    .catch((error) => {
+      response.status(500).json({ 
+        error, 
+        message: 'Failed to POST character. OOPPS!' 
+      });
     });
 });
 
+/* eslint-disable max-len*/
 app.put('/api/v1/characters/:id', checkAuth, checkAdmin, (request, response) => {
+/* eslint-enable max-len*/
   db('characters').where('id', request.params.id).update({ ...request.body })
     .then(() => {
       response.status(200).json({ message: 'Character Updated' });
     })
     .catch((error) => {
-      response.status(500).json({ error, message: 'Unable to update character' });
+      response.status(500).json({ 
+        error, 
+        message: 'Unable to update character' 
+      });
     });
 });
 
@@ -220,12 +256,16 @@ app.delete('/api/v1/characters', checkAuth, checkAdmin, (request, response) => {
       response.status(200).json({ message: 'Character removed' });
     })
     .catch(() => {
-      response.status(404).json({ message: 'Character not found, unable to delete' });
+      response.status(404).json({ 
+        message: 'Character not found, unable to delete' 
+      });
     });
 });
 
 app.listen(app.get('port'), () => {
+  /* eslint-disable no-console*/
   console.log(`${app.locals.title} is running on ${app.get('port')}.`);
+  /* eslint-enable no-console*/
 });
 
 module.exports = { app, db };

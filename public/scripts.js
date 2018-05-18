@@ -1,7 +1,7 @@
 $('#submit').on('click', getToken);
 
-async function getToken(e) {
-  e.preventDefault();
+async function getToken(event) {
+  event.preventDefault();
   const email = $('#email').val();
   const appName = $('#app-name').val();
   const token = await fetchToken(email, appName);
@@ -26,9 +26,9 @@ async function fetchToken(email, appName) {
     if (response.status === 200) {
       return body.token;
     } else {
-      return body.message
+      return body.message;
     }
-  } catch (err) {
-    return err
+  } catch (error) {
+    return error;
   }
 }

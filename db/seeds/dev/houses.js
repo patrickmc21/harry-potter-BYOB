@@ -1,8 +1,10 @@
 const houses = require('../../../scraped-data/houses-data.json');
 const characters = require('../../../scraped-data/characters-data.json');
 
-houses.forEach((house) => {
-  house.members = characters.filter(character => character.HOUSE === house.name);
+houses.forEach(house => {
+  house.members = characters.filter(character => {
+    return character.HOUSE === house.name;
+  });
 });
 
 const createCharacter = (knex, character) => {
@@ -54,7 +56,7 @@ exports.seed = (knex, Promise) => {
       return Promise.all(housePromises);
     })
     .catch((error) => {
-      console.log(error);
+      return error;
     });
 };
 

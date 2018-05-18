@@ -78,7 +78,9 @@ describe('Api endpoints', () => {
           response.should.have.status(404);
           response.body.should.be.an('object');
           response.body.should.have.property('message');
+          /* eslint-disable max-len*/
           response.body.message.should.equal('Invalid authentication, must include valid email and app name');
+          /* eslint-enable max-len*/
           done();
         });
     });
@@ -196,7 +198,9 @@ describe('Api endpoints', () => {
           response.should.have.status(406);
           response.body.should.be.an('object');
           response.body.should.have.property('message');
+          /* eslint-disable max-len*/
           response.body.message.should.equal('Invalid house supplied, valid house must have name, founder, house_head, colors, ghost, and common_room');
+          /* eslint-enable max-len*/
           done();
         });
     });
@@ -225,8 +229,9 @@ describe('Api endpoints', () => {
           done();
         });
     });
-
+    /* eslint-disable max-len*/
     it('should return an error if invalid Id provided when updating houses', done => {
+      /* eslint-enable max-len*/
       chai
         .request(app)
         .put('/api/v1/houses/hello')
@@ -339,7 +344,9 @@ describe('Api endpoints', () => {
           response.should.have.status(404);
           response.body.should.be.an('object');
           response.body.should.have.property('message');
+          /* eslint-disable max-len*/
           response.body.message.should.equal('No characters found in hello house');
+          /* eslint-enable max-len*/
           done();
         });
     });
@@ -451,7 +458,9 @@ describe('Api endpoints', () => {
           response.should.have.status(406);
           response.body.should.be.an('object');
           response.body.should.have.property('message');
+          /* eslint-disable max-len*/
           response.body.message.should.equal('Invalid character supplied, valid character must have name and house id');
+          /* eslint-enable max-len*/
           done();
         });
     });
@@ -485,8 +494,9 @@ describe('Api endpoints', () => {
           done();
         });
     });
-
+    /* eslint-disable max-len*/
     it('should return an error if invalid Id provided when updating character', done => {
+      /* eslint-enable max-len*/
       chai
         .request(app)
         .put('/api/v1/characters/hello')
@@ -541,7 +551,9 @@ describe('Api endpoints', () => {
           response.should.be.json;
           response.should.have.status(404);
           response.body.should.have.property('message');
+          /* eslint-disable max-len*/
           response.body.message.should.equal('Character not found, unable to delete');
+          /* eslint-enable max-len*/
           done();
         });
     });
