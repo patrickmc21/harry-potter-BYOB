@@ -25,7 +25,7 @@ All write (POST/PUT/DELETE) requests require Admin status.
 
 ### All Routes
 
-All routes should be prefixed with `https://potter-db.herokuapp.com/api/v1/`
+All routes should be prefixed with `https://potter-db.herokuapp.com/api/v1`
 
 #### Houses Route
 
