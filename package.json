@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "NODE_ENV=test mocha --exit",
-    "lint": "./node_modules/eslint/bin/eslint.js ./*.js"
+    "lint": "./node_modules/eslint/bin/eslint.js --fix ./public/ ./server.js ./db/"
   },
   "author": "Ngoc Phan, Patrick McLaughlin",
   "license": "ISC",
@@ -22,6 +22,8 @@
   "devDependencies": {
     "chai": "^4.1.2",
     "chai-http": "^4.0.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.12.0",
     "mocha": "^5.1.1"
   }
 }
