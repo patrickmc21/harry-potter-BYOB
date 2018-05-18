@@ -53,8 +53,8 @@ exports.seed = (knex, Promise) => {
       });
       return Promise.all(housePromises);
     })
-    .catch((err) => {
-      console.log(err);
+    .catch((error) => {
+      console.log(error);
     });
 };
 

@@ -37,7 +37,7 @@ describe('Api endpoints', () => {
   beforeEach(done => {
     token = jwt.sign({
       email, appName, admin
-    }, process.env.SECRET_KEY)
+    }, process.env.SECRET_KEY);
     db.migrate.rollback()
       .then(() => {
         db.migrate.latest()
@@ -93,17 +93,17 @@ describe('Api endpoints', () => {
           response.should.be.json;
           response.should.have.status(200);
           response.body.should.be.an('array');
-          response.body[0].should.have.property('name')
-          response.body[0].should.have.property('founder')
-          response.body[0].should.have.property('house_head')
-          response.body[0].should.have.property('colors')
-          response.body[0].should.have.property('ghost')
+          response.body[0].should.have.property('name');
+          response.body[0].should.have.property('founder');
+          response.body[0].should.have.property('house_head');
+          response.body[0].should.have.property('colors');
+          response.body[0].should.have.property('ghost');
           response.body[0].should.have.property('common_room');
           response.body[0].should.have.property('id');
           done();
-        })
-    })
-  })
+        });
+    });
+  });
 
   describe('GET /api/v1/houses/:id', () => {
     it('should return a specific house', (done) => {
@@ -114,16 +114,16 @@ describe('Api endpoints', () => {
           response.should.be.json;
           response.should.have.status(200);
           response.body.should.be.an('object');
-          response.body.should.have.property('name')
-          response.body.should.have.property('founder')
-          response.body.should.have.property('house_head')
-          response.body.should.have.property('colors')
-          response.body.should.have.property('ghost')
+          response.body.should.have.property('name');
+          response.body.should.have.property('founder');
+          response.body.should.have.property('house_head');
+          response.body.should.have.property('colors');
+          response.body.should.have.property('ghost');
           response.body.should.have.property('common_room');
           response.body.should.have.property('id');
           done();
-        })
-    })
+        });
+    });
 
     it('should return house not found if house does not exist', (done) => {
       chai
@@ -134,10 +134,10 @@ describe('Api endpoints', () => {
           response.should.be.json;
           response.should.have.status(404);
           response.body.should.have.property('message');
-          response.body.message.should.equal('House Not Found')
+          response.body.message.should.equal('House Not Found');
           done();
         });
-    })
+    });
 
     it('should return an error if id is invalid', (done) => {
       chai
@@ -152,8 +152,8 @@ describe('Api endpoints', () => {
           response.body.message.should.equal('Invalid Id');
           done();
         });
-    })
-  })
+    });
+  });
 
   describe('POST /api/v1/houses', () => {
     it('should return id if post is successful', done => {
@@ -261,7 +261,7 @@ describe('Api endpoints', () => {
           response.should.be.json;
           response.should.have.status(200);
           response.body.should.have.property('message');
-          response.body.message.should.equal('House deleted')
+          response.body.message.should.equal('House deleted');
           done();
         });
     });
@@ -277,8 +277,8 @@ describe('Api endpoints', () => {
           response.body.should.have.property('message');
           response.body.message.should.equal('Unable to delete house');
           done();
-        })
-    })
+        });
+    });
   });
 
   describe('GET /api/v1/characters', () => {
@@ -334,7 +334,7 @@ describe('Api endpoints', () => {
       chai.request(app)
         .get('/api/v1/characters?house=hello')
         .set('authorization', token)
-        .end((error,response) => {
+        .end((error, response) => {
           response.should.be.json;
           response.should.have.status(404);
           response.body.should.be.an('object');
@@ -379,10 +379,10 @@ describe('Api endpoints', () => {
           response.should.be.json;
           response.should.have.status(404);
           response.body.should.have.property('message');
-          response.body.message.should.equal('Character Not Found')
+          response.body.message.should.equal('Character Not Found');
           done();
         });
-    })
+    });
 
     it('should return an error if id is invalid', (done) => {
       chai
@@ -397,7 +397,7 @@ describe('Api endpoints', () => {
           response.body.message.should.equal('Invalid Id');
           done();
         });
-    })
+    });
   });
 
   describe('POST /api/v1/characters', () => {
@@ -526,7 +526,7 @@ describe('Api endpoints', () => {
           response.should.be.json;
           response.should.have.status(200);
           response.body.should.have.property('message');
-          response.body.message.should.equal('Character removed')
+          response.body.message.should.equal('Character removed');
           done();
         });
     });
